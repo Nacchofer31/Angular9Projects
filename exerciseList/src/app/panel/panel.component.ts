@@ -13,10 +13,11 @@ export class PanelComponent implements OnInit {
   constructor(private ExerciseService:ExerciseService) { }
 
   ngOnInit(): void {
+    this.getExercises()
   }
 
   getExercises():void{
-    this.ExerciseService.getExercises().subscribe(exercises=>this.exercises=exercises)
+    this.ExerciseService.getExercises().subscribe(exercises=>this.exercises=exercises.slice(1,5))
   }
 
 }
