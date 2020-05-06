@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Exercise } from '../exercise';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-exercise-detail',
@@ -10,9 +11,14 @@ export class ExerciseDetailComponent implements OnInit {
 
   @Input() exercise:Exercise;
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getExercise
+  }
+
+  getExercise():void{
+    const id =+ this.route.snapshot.paramMap.get('id')
   }
 
 }
