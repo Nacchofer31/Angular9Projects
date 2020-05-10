@@ -1,3 +1,4 @@
+import { ExerciseService } from './../exercise.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Exercise } from '../exercise';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +12,7 @@ export class ExerciseDetailComponent implements OnInit {
 
   @Input() exercise:Exercise;
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private exerciseService:ExerciseService) { }
 
   ngOnInit(): void {
     this.getExercise
@@ -19,6 +20,7 @@ export class ExerciseDetailComponent implements OnInit {
 
   getExercise():void{
     const id =+ this.route.snapshot.paramMap.get('id')
+    this.exerciseService.getExerciseById(id).subscribe(exercise=>this.exercise=exercise)
   }
 
 }
