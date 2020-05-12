@@ -10,12 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExerciseDetailComponent implements OnInit {
 
-  @Input() exercise:Exercise;
+  exercise:Exercise;
 
   constructor(private route:ActivatedRoute, private exerciseService:ExerciseService) { }
 
   ngOnInit(): void {
-    this.getExercise
+    this.getExercise()
   }
 
   getExercise():void{
