@@ -1,7 +1,8 @@
 <h2>EXERCISES LIST</h2>
 <ul class="exercises">
   <li *ngFor="let exercise of exercises" (click) = "onSelectExercise(exercise)" [class.selected]="exercise===selectedExercise">
+    <a routerLink="/detail/{{exercise.id}}">
     <span class="exercise">{{exercise.id}}</span>{{exercise.name}}
+    </a>
   </li>
 </ul>
-<app-exercise-detail [exercise]="selectedExercise"></app-exercise-detail>
