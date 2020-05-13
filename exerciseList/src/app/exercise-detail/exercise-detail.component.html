@@ -1,4 +1,10 @@
 <div *ngIf="exercise">
-  <h2> DETAILS </h2>
+  <h2>{{exercise.name | uppercase}}</h2>
   <div><span>id:</span>{{exercise.id}}</div>
+  <div>
+    <label>nombre:
+      <input [(ngModel)]="exercise.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">Atrás</button>
 </div>
