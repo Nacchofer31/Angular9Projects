@@ -15,6 +15,7 @@ export class ExerciseService {
   }
 
   getExerciseById(id:number):Observable<Exercise>{
+    console.log("Requested ID: "+id)
     return of(EXERCISES.find(exercise=>exercise.id===id))
   }
 }
